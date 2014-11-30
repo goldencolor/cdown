@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>CountDown</title>
+</head>
+<body>
+    <div></div>
+    <script src="src/cdown.js"></script>
+    <script>
+        Cdown.render({
+            edate: new Date('2014/11/30 18:37'),
+            element: document.querySelector('div'),
+            unit: Cdown.SECOND,
+            pattern: '{hh}:{mm}:{ss}',
+            finish: function(ele) {
+                ele.innerHTML = 'finished';
+            }
+        });
+    </script>
+</body>
+</html>
