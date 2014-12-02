@@ -24,25 +24,16 @@
         months_per_year = 12,
         ceil = Math.ceil, floor = Math.floor;
 
-    var Cdown = function() {
+    var Cdown = function(params) {
         this.options = {
             edate: new Date(),
             sdate: new Date(),
             pattern: '{MM}:{dd}:{hh}:{mm}:{ss}',
         };
+        extend(o, params);
     };
 
-    Cdown.prototype.render = function(edate, element) {
-        var o = this.options;
-        // merge params
-        if (arguments.length > 1) {
-            edate instanceof Date && (this.options.edate = edate);
-            this.options.element = element;
-        } else {
-            var params = arguments[0];
-            extend(o, params);
-        }
-
+    Cdown.prototype.render = function() {
         this.set(o.sdate, o.edate);
 
         if (this.value <= 0) {
@@ -159,8 +150,6 @@
         return padLeft(this.s);
     };
 
-    var cdown = new Cdown();
-
     extend(cdown, {
         SECOND: second,
         MINUTE: minute,
@@ -168,6 +157,6 @@
         DAY: day
     });
 
-    w.Cdown = cdown;
+    w.Cdown = Cdown;
 
 }(window));

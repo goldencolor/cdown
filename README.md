@@ -18,18 +18,11 @@ Demo地址：http://sternzhang.github.io/cdown, 或者扫描二维码在手机�
 
 ### 使用
 
-对外只提供一个调用接口--render方法。这个方法有两种使用方式：
+对外只提供一个调用接口--render方法：
 
-1、render(endDate, element)
+var cd = new Cdown(option);
 
-```js
-
-Cdown.render(new Date(), document.querySelector('.cdown'));
-
-
-```
-
-2、render(options)
+cd.render()
 
 `option`是配置参数的对象，你可以针对以下几个属性进行自定义。
 
@@ -38,15 +31,15 @@ Cdown.render(new Date(), document.querySelector('.cdown'));
 {
 
 	sdate: 开始时间（Date类型，默认是当前时间）
-	
+
 	edate: 结束时间(Date类型)
-	
+
 	unit: 计时间隔(Cdown.SECOND, Cdown.MINUTE, Cdown.HOUR, Cdown.DAY)
-	
+
 	pattern: 模式字符串
-	
+
 	finish: 倒计时结束后触发的函数
-	
+
 }
 
 
