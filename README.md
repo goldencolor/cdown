@@ -4,6 +4,7 @@ JavaScript倒计时小工具
 
 Demo地址：http://sternzhang.github.io/cdown, 或者扫描二维码在手机浏览器里查看：
 
+![cdown二维码](http://stern.qiniudn.com/repo_cdown.png)
 
 ### 安装
 
