@@ -4,20 +4,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
     <title>CountDown</title>
+    <style>
+        .example {
+            min-width: 320px;
+            max-width: 480px;
+            margin: 0 auto;
+            background-color: #f7f7f9;
+            border: 1px solid #e1e1e8;
+            border-radius: 4px;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
-    <div></div>
+    <div class="example">
+        <p>距离2015年元旦:</p>
+        <p class="spring"></p>
+    </div>
+
     <script src="src/cdown.js"></script>
     <script>
-        Cdown.render({
-            edate: new Date('2014/11/30 18:37'),
-            element: document.querySelector('div'),
+        var cd = new Cdown({
+            edate: new Date('2014/12/31 00:00'),
+            element: document.querySelector('.spring'),
             unit: Cdown.SECOND,
-            pattern: '{hh}:{mm}:{ss}',
+            pattern: '{dd}天{hh}小时{mm}分{ss}秒',
             finish: function(ele) {
-                ele.innerHTML = 'finished';
+                ele.innerHTML = '元旦快乐';
             }
         });
+        cd.render();
     </script>
 </body>
 </html>

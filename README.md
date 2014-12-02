@@ -20,9 +20,13 @@ Demo地址：http://sternzhang.github.io/cdown, 或者扫描二维码在手机�
 
 对外只提供一个调用接口--render方法：
 
+```
+
 var cd = new Cdown(option);
 
 cd.render()
+
+```
 
 `option`是配置参数的对象，你可以针对以下几个属性进行自定义。
 

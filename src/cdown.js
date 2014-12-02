@@ -30,10 +30,12 @@
             sdate: new Date(),
             pattern: '{MM}:{dd}:{hh}:{mm}:{ss}',
         };
-        extend(o, params);
+        extend(this.options, params);
     };
 
     Cdown.prototype.render = function() {
+        var o = this.options;
+
         this.set(o.sdate, o.edate);
 
         if (this.value <= 0) {
@@ -150,7 +152,7 @@
         return padLeft(this.s);
     };
 
-    extend(cdown, {
+    extend(Cdown, {
         SECOND: second,
         MINUTE: minute,
         HOUR: hour,
